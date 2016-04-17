@@ -60,5 +60,28 @@ def max_sub_array(arr, from, to)
 	m1 > m2 ? ( m1 > m3 ? m1 : m3) : ( m2 > m3 ? m2 : m3)
 end
 
+# analysis
+def max_sub_array(arr)
+	sum_of = []
+	sum_of << arr[0]
+	arr.each_with_index do |val, inx|
+		next if inx == 0
+		sum_of << sum_of[inx-1] + val
+	end
+
+	max_sum = sum_of[0]
+	sum_of.each_with_index do |val, inx|
+		next if inx == 0
+		now_min = 0
+		sum_of[0..(inx-1)].each_with_index do |val, inx|
+			now_min = val if val < now_min	
+		end
+		now_sum = val - now_min
+		max_sum = now_sum if now_sum > max_sum
+	end
+
+	max_sum
+end
+
 arr = [-1, 2, 3, -5, 9]
 puts max_sub_array(arr)
