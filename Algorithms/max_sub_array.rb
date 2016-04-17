@@ -83,5 +83,19 @@ def max_sub_array(arr)
 	max_sum
 end
 
+# dynamic programmming
+def max_sub_array(arr)
+	max_sum = arr[0]
+	max_sum_of = []
+	max_sum_of << arr[0]
+	arr.each_with_index do |val, inx|
+		next if inx == 0
+		now_sum = val > val + max_sum_of[inx-1] ? val : val + max_sum_of[inx-1]
+		max_sum_of << now_sum
+		max_sum = now_sum if now_sum > max_sum
+	end
+	max_sum
+end
+
 arr = [-1, 2, 3, -5, 9]
 puts max_sub_array(arr)
