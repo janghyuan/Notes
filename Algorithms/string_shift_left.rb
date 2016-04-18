@@ -8,7 +8,8 @@
 # 因为字符串的翻转操作是 空间是O(1) ，时间是O(n) 
 
 def shift_left(string, n)
+	n %= string.length
 	(string[0..(n-1)].reverse + string[n..(string.length-1)].reverse).reverse
 end
 
-puts shift_left("abcdef", 2) #=>cdefab
+puts shift_left("abcdef", 8) #=>cdefab
