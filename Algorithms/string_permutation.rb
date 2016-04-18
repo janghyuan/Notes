@@ -16,6 +16,7 @@
 def permutation(string, from , to)
 	if from == to
 		puts string
+		return
 	end
 
 	(from..to).each do |head|
