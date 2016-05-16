@@ -160,6 +160,8 @@ class Person
     name
   end
 end
+```
+
 
 ## 10. 推荐使用 Struct 而非 Hash 存储结构化数据
 
@@ -177,3 +179,4 @@ Person = Struct.new(:name, :age, :house) do
     return "mammal"
   end
 end
+```
