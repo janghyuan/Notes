@@ -160,3 +160,20 @@ class Person
     name
   end
 end
+
+## 10. 推荐使用 Struct 而非 Hash 存储结构化数据
+
+Struct.new 生成的是一个新的小型的类。方便我们定义新的数据结构类型，而不用总是用 Hash 来模拟。
+
+```ruby
+Person = Struct.new(:name, :age, :house) do
+  # 定义实例方法
+  def greeting
+    puts 'hello'
+  end
+  
+  # 定义类方法
+  def self.species
+    return "mammal"
+  end
+end
