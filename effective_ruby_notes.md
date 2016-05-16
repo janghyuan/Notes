@@ -131,3 +131,32 @@ end
   则代表不传递任何参数
 
 如果父类中没有相应的同名方法，则会引发 method_missing 方法。默认的原始的 method_missing 方法会提供一些额外的关于 由于调用 super 而引发此错误的信息。如果在继承链中又定义了自己的 method_missing 方法，则会丢失掉这部分信息。
+
+## 8. 初始化子类时调用 super
+
+接着上一条来说，如果我们在新建一个对象时，想做一些初始化操作，我们可以定义 initialize 方法，但是该方法只会在子类中被调用，父类中的 initialize 不会被调用。
+
+所以，我们可以在初始化子类时，在子类的 initialize 方法中调用 super（并传递相应的初始化参数）来调用父类的初始化方法。
+
+clone 和 dup => initialize_copy
+
+## 9. 提防 Ruby 最棘手的解析
+
+该问题在 Rails 里很早就遇到过了，就是 setter 和 getter 的调用问题。
+
+调用 setter 时，必须有明确的接收者，而 getter 则不用。
+
+```ruby
+class Person
+  attr_accessor :name
+  
+  def initialize name
+    # setter method
+    self.name = name
+  end
+  
+  def what_is_my_name
+    # getter method
+    name
+  end
+end
