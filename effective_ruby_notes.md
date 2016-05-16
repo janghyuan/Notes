@@ -81,3 +81,39 @@ Array#compact 返回去掉所有 nil 元素的方法接受者的副本。
 **开启运行时警告：**
 
 通过在程序中设置全局变量 $VERBOSE 为 true，false 会减少显示的信息，nil 则是禁用。
+
+## 6. 了解 Ruby 如何构建继承体系
+
+`receiver.method_name` 当我们在一个对象上调用一个方法时，首先我们会在该对象所属的类上找，如果找不到，进一步再在该对象的超类中寻找，一直到 BasicObject 类，如果到头了还没有找到，那就从头开始再次寻找一个叫 `method_missing` 的方法抛出一个错误。
+
+但是我们可以在一个类中 include 一个模块，来增加一些新的查找节点。
+
+```ruby
+module ThingsWithName
+  def name
+  ...
+  end
+end
+
+class Person
+  include ThingsWithName
+end
+
+class Customer < Person
+  ...
+end
+```
+
+实质上，我们创建了一个单例类，将 module 包含的方法放到了这个单例类中，并且将这个单例类插入到了 customer 对象的继承体系中。
+
+如果我们实例化了一个对象 `customer = Customer.new` ，然后我们这样定一个方法：
+
+```ruby
+def customer.name
+  ...
+end
+```
+
+实质上也是我们创建了一个单例类，将该方法放入其中，并将这个单例类放到了该对象的继承体系中。（在该对象所属的类之前）
+
+其实，这也解释了类方法到底在哪里的问题。当我们把类看作成一个对象时，类方法其实都放在了一个单例类中。（在该类所属的 Class 类之前）
