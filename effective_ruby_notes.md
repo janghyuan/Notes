@@ -180,3 +180,27 @@ Person = Struct.new(:name, :age, :house) do
   end
 end
 ```
+
+## 11. 通过在模块中嵌入代码来创建命名空间
+
+1. 命名空间的创建
+
+  ```ruby
+  module Namespace_name
+    ...
+  end
+  ```
+  
+  实质上就是新建一个 module，在该 module 里定义自己的东西。
+  
+  如果上面的 module 先建立完毕，则可以像下面这样定义自己的类。
+  
+  ```ruby
+  class Namespece_name::YourClassName
+    ...
+  end
+  ```
+  
+  前提是必须先建立好 Namespace_name 这个 module
+
+2. 在 Ruby 中，常量的查找过程（待补充？）
