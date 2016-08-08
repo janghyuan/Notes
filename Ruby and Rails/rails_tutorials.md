@@ -10,3 +10,16 @@
     Minitest::Reporters.use!
     ```
 
+7. 回退指南
+    - `rails db:migrate` -> `rails db:rollback`
+    - 回到最初始的状态：`rails db:migrate VERSION=0`
+    - `rails g model User ...` ->  `rails d model User`
+
+8. 测试 helper 方法
+    ```ruby
+    require 'test_helper'
+    class ApplicationHelperTest < ActionView::TestCase
+        ...
+    end
+    ```
+    
