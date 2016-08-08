@@ -23,3 +23,5 @@
     end
     ```
     
+9. 关于 bootstrap-sass 的一切 [bootstrap-sass](https://github.com/twbs/bootstrap-sass)
+10. 集成测试 `rails g integration_test site_layout`
