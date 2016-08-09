@@ -24,4 +24,7 @@
     ```
     
 9. 关于 bootstrap-sass 的一切 [bootstrap-sass](https://github.com/twbs/bootstrap-sass)
-10. 集成测试 `rails g integration_test site_layout`
+10. 集成测试 `rails g integration_test site_layout` `rails t:integration`
+11. `get '/help', to: 'pages#help', as: 'helf'` as 之后就覆盖了原来的 `help_path`
+12. 如果要在测试中使用 helper 方法，就要在 `test_helper.rb` 中 `include ApplicationHelper`
+13. 
