@@ -42,3 +42,16 @@
     3. `authenticate` method
     
     `bcrypt` gem in your Gemfile
+
+16. 关于三种环境的切换
+    - `rails console test`
+    - `rails server --environment production`
+    - `rails db:migrate RAILS_ENV=production`
+
+17. 对象 yaml 化
+    ```ruby
+    user = User.first
+    puts user.attributes.to_yaml
+    ```
+    
+
