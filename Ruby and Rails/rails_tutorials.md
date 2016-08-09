@@ -24,7 +24,21 @@
     ```
     
 9. 关于 bootstrap-sass 的一切 [bootstrap-sass](https://github.com/twbs/bootstrap-sass)
-10. 集成测试 `rails g integration_test site_layout` `rails t:integration`
+10. 集成测试 `rails g integration_test site_layout` `rails test:integration`
 11. `get '/help', to: 'pages#help', as: 'helf'` as 之后就覆盖了原来的 `help_path`
 12. 如果要在测试中使用 helper 方法，就要在 `test_helper.rb` 中 `include ApplicationHelper`
-13. 
+13. 模型测试 `rails test:models`
+14. 为 email 字段添加索引 `rails g migration add_index_to_users_email`
+    ```ruby
+    add_index :users, :email, unique: true
+    ```
+
+15. 添加用户密码
+    
+    `has_secure_password`
+    
+    1. `rails g migration add_password_digest_to_users password_digest:string`
+    2. `password` and `password_confirmation`
+    3. `authenticate` method
+    
+    `bcrypt` gem in your Gemfile
