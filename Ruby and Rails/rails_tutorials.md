@@ -54,4 +54,5 @@
     puts user.attributes.to_yaml
     ```
     
-
+18. 还原数据库 `rails db:migrate:reset`
+19. 
