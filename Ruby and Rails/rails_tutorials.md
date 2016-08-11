@@ -55,4 +55,6 @@
     ```
     
 18. 还原数据库 `rails db:migrate:reset`
-19. 
+19. 只测试指定的文件 `rails test test/integration/users_login_test.rb`
+20. 测试指定文件中的指定的测试 `rails test test/integration/users_login_test.rb --name test_valid_login`
+21. helper 是自动在视图中可用的，如果要在 controller 使用，则要在 `application_controller.rb` 中引入该 helper 文件。
