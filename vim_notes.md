@@ -63,3 +63,15 @@
 - `;` 添加文本
 - `ESC` 退出插入模式，每行都插入了 `;`
 
+## 操作缓冲区文本的 Ex 命令
+
+| 命令 | 用途 |
+| :--- | :--- |
+| `:[range]delete [x]` | 删除指定范围内的行到寄存器 x 中 |
+| `:[range]yank [x]` | 复制指定范围内的行到寄存器 x 中 |
+| `:[line]put [x]` | 在指定行后粘贴寄存器 x 中的内容 |
+| `:[range]copy {address}` | 将指定范围内的行拷贝到 {address} 所指定的行之下 |
+| `:[range]move {address}` | 将指定范围内的行移动到 {address} 所指定的行之下 |
+| `:[range]join` | 连接指定范围内的行 |
+| `:[range]normal {commands}` | 对指定范围内的每一行执行普通模式命令 {commands} |
+| `:[range]global/{pattern}/[cmd]` | 对指定范围内匹配 {pattern} 的所有行，在其上执行 Ex 命令 {cmd} |
