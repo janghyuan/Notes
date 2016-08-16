@@ -116,14 +116,16 @@ __Explaination:__ 每次运行 `:bnext` 命令（或用 `@:` 命令重复执行�
 
 `!G` => `:.,$!`
 
-filter 举例：
+__filter 举例：__
 
 CSV 文件
 
+```
 first name, last name, email
 jane, doe, jane@example.com
 drew, neil, drew@vimcasts.org
 john, smith, john@example.org
+```
 
 按照列 2 进行排序：
 
