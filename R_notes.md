@@ -55,3 +55,25 @@
 - `data = read.csv(file.choose(), header=T)` 通过 `file.choose()` 函数，我们可以打开一个文件选择对话框来选择文件，`header` 选项指示我们 csv 文件中存在标题栏
 - `data = read.delim(file.choose(), header=T)` 该函数可以读取以 tab 分隔的文件
 - 更加通用的方式是我们自己指定分隔符 `data = read.table(file.choose(), header=T, sep=",")` 或者是 `sep="\t"`
+- 查看导入数据的维数 `dim(data)` 
+- 查看导入数据的标题栏 `names(data)`
+- 查看导入数据的前 6 行 `head(data)`
+- 查看导入数据的后 6 行 `tail(data)`
+- 查看指定行数的数据 `data[c(1,3,5), ]` 或者 `data[-(4:722), ]` 用 - 号取反
+
+## 处理导入的数据
+
+- 假设我们导入数据到 data 变量中，我们要取得其中一列 Age 的平均值
+  - `mean(data$Age)`
+  - `attach(data)` `mean(Age)`
+- 数据的类型用 `class(Age)` 来获取
+  - numeric 带小数点的
+  - integer 整型
+  - factor 类别型，查看该类别下有哪些选项：`levels(Gender)`
+- 统计信息命令 `summary(data)`
+- 一般在类别型数据（factor）中我们用 1 表示 yes， 0 表示 no，但是 R 会把他们看成是 numeric，所以我们要进行转换。
+  ```
+  x = c(0,1,1,1,1,0,0,0,1)
+  x = as.factor(x)
+  class(x) # factor
+  ```
