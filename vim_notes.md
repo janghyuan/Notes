@@ -156,6 +156,8 @@ john, smith, john@example.org
   - `**/*.js` 当前目录下包括子目录下的所有以 .js 结尾的文件
   - `**/*.*` 匹配所有文件
 - 如果一个文件中每一行包含一个文件名，则我们可以指定这个文件的内容为参数列表的内容。
-  `:args \`cat chapters.txt\``
+  ```
+  :args `cat chapters.txt`
+  ```
 - 遍历参数列表 `:next` `:prev`
 - 在参数列表上的每一个缓冲区上执行同一条命令 `:argdo`
