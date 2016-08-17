@@ -47,3 +47,11 @@
   - `mat[1, 2]` 取得第一行第二列
   - `mat[c(1,3), 2]` 取得第一行第二列，第三行第二列中的元素
   - `mat[2,]` 取得第二行所有的元素
+
+## 导入数据
+
+- 在 Excel 中可以直接将数据导出为 csv 文件和以 tab 分隔的数据形式
+- 查看某个函数的帮助信息 `help(read.csv)` `?read.csv`
+- `data = read.csv(file.choose(), header=T)` 通过 `file.choose()` 函数，我们可以打开一个文件选择对话框来选择文件，`header` 选项指示我们 csv 文件中存在标题栏
+- `data = read.delim(file.choose(), header=T)` 该函数可以读取以 tab 分隔的文件
+- 更加通用的方式是我们自己指定分隔符 `data = read.table(file.choose(), header=T, sep=",")` 或者是 `sep="\t"`
