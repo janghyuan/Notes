@@ -72,6 +72,7 @@
   - factor 类别型，查看该类别下有哪些选项：`levels(Gender)`
 - 统计信息命令 `summary(data)`
 - 一般在类别型数据（factor）中我们用 1 表示 yes， 0 表示 no，但是 R 会把他们看成是 numeric，所以我们要进行转换。
+ 
   ```
   x = c(0,1,1,1,1,0,0,0,1)
   x = as.factor(x)
