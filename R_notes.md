@@ -78,3 +78,11 @@
   x = as.factor(x)
   class(x) # factor
   ```
+## 取出数据的子集
+
+当我们导入数据后，并且 attach 后：
+
+- `mean(Age[Gender=='female'])` 可以取出所有女性的平均年龄
+- `FemaleData = LungCapData[Gender=='female', ]` 所有女性的数据
+- `MaleData = LungCapData[Gender=='male', ]` 所有男性的数据
+- `MaleOver15 = LungCapData[Gender=='male' & Age > 15, ]` 所有大于 15 岁的男性
