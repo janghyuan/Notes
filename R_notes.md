@@ -99,3 +99,20 @@
   ```
 - 删除工作区的所有变量 `rm(list=ls())`
 
+## 设置工作目录
+
+- 获取当前工作目录 `getwd()`
+- 设置工作目录
+  ```
+  currentWD = "/Users/username/Desktop/project-1"
+  setwd(currentWD)
+  ```
+- 保存当前工作环境（假设我们已经创建了很多变量）`save.image("FirstProject.Rdata")` 不加路径的话，默认是保存在当前的工作目录下的。
+- 退出 Rstudio `q()` 会提示你时候保存当前的工作环境
+- 加载以前保存的工作环境，先设置好当前工作目录，让后再加载 `load("FirstProject.Rdata")` 或者 `load(file.choose())` 
+
+## 撰写 R 脚本
+
+- R 脚本以 `.R` 结尾
+- 在 RStudio 中加载进脚本后，可以单行执行，也可以选中多行进行多行执行
+- 在 RStudio 中，脚本编辑器和命令行都可以进行 Tab 键补全
