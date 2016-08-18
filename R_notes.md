@@ -78,6 +78,7 @@
   x = as.factor(x)
   class(x) # factor
   ```
+
 ## 取出数据的子集
 
 当我们导入数据后，并且 attach 后：
