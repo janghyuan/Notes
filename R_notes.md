@@ -116,3 +116,11 @@
 - R 脚本以 `.R` 结尾
 - 在 RStudio 中加载进脚本后，可以单行执行，也可以选中多行进行多行执行
 - 在 RStudio 中，脚本编辑器和命令行都可以进行 Tab 键补全
+
+## 安装 R 拓展包
+
+- `install.packages("epiR")` 安装 `epiR` 扩展包
+- 如果不指定包名，则会显示全部的扩展包列表
+- 在一个 R session 中，每次都要加载相应的扩展包才能使用其功能，退出该 session 后，扩展包也跟随消失了 `library(epiR)` 
+- 查看一个扩展包的帮助文档 `help(package = epiR)`
+- 删除一个扩展包 `remove.packages("epiR")` 
