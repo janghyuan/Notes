@@ -87,3 +87,15 @@
 - `FemaleData = LungCapData[Gender=='female', ]` 所有女性的数据
 - `MaleData = LungCapData[Gender=='male', ]` 所有男性的数据
 - `MaleOver15 = LungCapData[Gender=='male' & Age > 15, ]` 所有大于 15 岁的男性
+
+## Logic 运算
+
+- `temp = Age > 5` 的产出是一系列的 TRUE FALSE
+- 如果想转换为 0，1 的话：`temp = as.numeric(Age > 5)`
+- 如果我们想为原始数据再加一列（女性吸烟者标记为 TRUE）
+  ```
+  FemSmoke <- Gender=='female' & Smoke=='yes'
+  MoreData <- cbind(LungCapData, FemSmoke)
+  ```
+- 删除工作区的所有变量 `rm(list=ls())`
+
