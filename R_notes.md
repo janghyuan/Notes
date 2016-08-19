@@ -124,3 +124,18 @@
 - 在一个 R session 中，每次都要加载相应的扩展包才能使用其功能，退出该 session 后，扩展包也跟随消失了 `library(epiR)` 
 - 查看一个扩展包的帮助文档 `help(package = epiR)`
 - 删除一个扩展包 `remove.packages("epiR")` 
+
+## barchart & piechart
+
+- 柱状图统计的是类别数据的出现频次（Frequency），所以我们传递给 `barplot()` 的参数就是一个 Frequency Table，而如何产生这个 table，就需要 `table()` 命令
+  ```
+  barplot(percent, main="TITLE", xlab="Gender", ylab="%", las=1, names.arg=c("Female", "Male"))
+  ```
+  解释:
+  - `main` 标题
+  - `xlab` `ylab` x,y 轴的名称
+  - `las` 将 y 轴的刻度表示水平显示
+  - `names.arg` 将每一个柱状图的的标识改成指定的
+  - `horiz=T` 将主转图水平显示，并且要更改 x,y轴的顺序
+
+- 饼状图 `pie(percentage)`
