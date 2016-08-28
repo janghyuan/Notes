@@ -48,6 +48,8 @@
   - `mat[c(1,3), 2]` 取得第一行第二列，第三行第二列中的元素
   - `mat[2,]` 取得第二行所有的元素
 
+__补充内容：numeric 和 integer 的区别在哪里？__ http://stackoverflow.com/questions/23660094/whats-the-difference-between-integer-class-and-numeric-class-in-r
+
 ## 导入数据
 
 - 在 Excel 中可以直接将数据导出为 csv 文件和以 tab 分隔的数据形式
