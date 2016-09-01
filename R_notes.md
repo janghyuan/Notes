@@ -151,7 +151,9 @@ __quartile__ 是「四分位点」，具体来说就是用 3 个位点把数据�
 而 R 语言中的 quantile 命令可以让我们自己设定分位点的位置和个数：
 `quantile(LungCap, c(0, 0.25, 0.5, 0.75, 1))` 就可以查看最小值，第一分位点，中值，第三分位点，最大值的情况。
 
-`boxplot(LungCap ~ Gender, main = "Boxplot by Gender", ylim = c(0, 16), las = 1, ylab = "Lung Capacity")`
+![屏幕快照 2016-09-02 上午7.11.30.png](https://ooo.0o0.ooo/2016/09/01/57c8b5cd75f0c.png)
+
+__命令__: `boxplot(LungCap ~ Gender, main = "Boxplot by Gender", ylim = c(0, 16), las = 1, ylab = "Lung Capacity")`
 - `LungCap ~ Gender` 以 `Gender` 为分类标准，将 `LungCap` 分为两部分并分别画图比较（在一个 boxplot 里）
 - `main = "Boxplot by Gender` 设置图的标题
 - `ylim = c(0, 16)` 设置纵坐标值的标度
