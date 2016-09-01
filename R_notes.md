@@ -141,3 +141,19 @@ __补充内容：numeric 和 integer 的区别在哪里？__ http://stackoverflo
   - `horiz=T` 将主转图水平显示，并且要更改 x,y轴的顺序
 
 - 饼状图 `pie(percentage)`
+
+## boxplot 详解 quartile & quantile
+
+__先搞清楚什么是 quartile & quantile:__ https://en.wikipedia.org/wiki/Quartile
+
+__quartile__ 是「四分位点」，具体来说就是用 3 个位点把数据分为 4 个部分，第一分位点（最小值到中值之间中间的那个点）也就是将数据分为前 25% 和 后 75% 的那个点；第二分位点就是中值，第三分位点（中值到最大值之间中间的那个点）
+
+而 R 语言中的 quantile 命令可以让我们自己设定分位点的位置和个数：
+`quantile(LungCap, c(0, 0.25, 0.5, 0.75, 1))` 就可以查看最小值，第一分位点，中值，第三分位点，最大值的情况。
+
+`boxplot(LungCap ~ Gender, main = "Boxplot by Gender", ylim = c(0, 16), las = 1, ylab = "Lung Capacity")`
+- `LungCap ~ Gender` 以 `Gender` 为分类标准，将 `LungCap` 分为两部分并分别画图比较（在一个 boxplot 里）
+- `main = "Boxplot by Gender` 设置图的标题
+- `ylim = c(0, 16)` 设置纵坐标值的标度
+- `las = 1` 将纵坐标值的标度书写方式横过来写（治疗颈椎病专用）
+- `ylab = "Lung Capacity"` 设置纵坐标的名称
