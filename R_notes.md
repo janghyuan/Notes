@@ -159,3 +159,34 @@ __命令__: `boxplot(LungCap ~ Gender, main = "Boxplot by Gender", ylim = c(0, 1
 - `ylim = c(0, 16)` 设置纵坐标值的标度
 - `las = 1` 将纵坐标值的标度书写方式横过来写（治疗颈椎病专用）
 - `ylab = "Lung Capacity"` 设置纵坐标的名称
+
+## 分层的 boxplot
+
+__举例说明__：肺活量（numeric value）与是否抽烟（categorical value）的关系。如果我们考虑所有年龄段的总体数据，得到的结果反而是抽烟者的肺活量总体上比不抽烟者要大，这是违背通常我们感官的的。所以它们之间的关系是分年龄段的，我们可以考虑在不同的年龄段比较肺活量和是否抽烟的关系。
+
+__为什么会出现违背我们感官的结果：__
+
+- 如果我们把 3 - 19 岁的小孩考虑上，在这个区间内吸烟者比不吸烟者年龄一般要大
+- 在这个 3 - 19 岁的区间内，考不考虑吸烟的问题，大孩子一般比小孩子的肺活量要大
+
+所以，我们会考虑只选取年龄 18+ 的数据，进行测试肺活量与是否抽烟的关系：
+
+`boxplot(LungCap[Age >= 18] ~ Smoke[Age >= 18], main = "LungCap vs Smoke for 18+", ylab = "Lung Capacity", las = 1)`
+
+
+- `AgeGroups = cut(Age, breaks = c(0, 13, 15, 17, 25), labels = c("<=13", "14/15", "16/17", "18+"))`
+  `cut` 命令的总体效果就是把一个 numeric 数据转换成了 categorical 类型的数据。通过上述命令我们将 Age 数据转换成了 4 个区间。我们可以用 `levels(AgeGroups)` 来查看。
+- `boxplot(LungCap ~ Smoke*AgeGroups, main = "LungCap vs Smoke, by AgeGroups", ylab = "Lung Capacity", las = 1)`
+  `Smoke * AgeGroups` 的意义在将数据分成了 8 份。
+- `boxplot(LungCap ~ Smoke*AgeGroups, main = "LungCap vs Smoke, by AgeGroups", ylab = "Lung Capacity", las = 2)`
+  将 las 改为 2，因为横坐标轴的刻度写不开了。。
+- `boxplot(LungCap ~ Smoke*AgeGroups, main = "LungCap vs Smoke, by AgeGroups", ylab = "Lung Capacity", las = 2, col = c(4,2)`
+  用 `col = c(4, 2)` 指定颜色，4 代表蓝色，2 代表红色，我们只指定了 2 种颜色，但是图中有 8 个 box，R 会循环使用这两种颜色
+- `boxplot(LungCap ~ Smoke*AgeGroups, main = "LungCap vs Smoke, by AgeGroups", ylab = "Lung Capacity", las = 2, col = c(4, 2), axes = F, xlab = "Age Strata")
+  用 `axex = F` 将坐标轴的刻度全部取消，用下面自己定义的坐标值重画，取消坐标值的同时，box 的边框也被取消了，所以我们要用 `box()` 命令重绘
+- `axis(2, at = seq(0, 20 , 2), seq(0, 20, 2), las = 1)`
+  重绘纵坐标值 `at` 指定绘制的位置
+- `axis(1, at = c(1.5, 3.5, 5.5, 7.5), labels = c("<=13", "14/15", "16/17", "18+"))`
+  重绘横坐标值
+- `legend(x = 5.5, y = 4.5, legend = c("Non-Smoke", "Smoke"), col = c(4, 2), pch = 15, cex = 0.8)`
+  绘制图例，`pch = 15` 指定图例中的形状类型，`cex = 0.8` 指定图例相对于整个 box 的比例
