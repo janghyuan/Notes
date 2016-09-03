@@ -26,6 +26,7 @@
 
 - MVC 架构详解
   ![屏幕快照 2016-09-04 上午7.37.48.png](https://ooo.0o0.ooo/2016/09/03/57cb5eee72a6a.png)
+
 - 生成脚手架 `rails g scaffold User name:string email:string`
 - Rails 5.0 使用 `rails` 替换了 `rake`，例如: `rails db:migrate`
 - 如果部署到 Heroku 上的应用涉及到数据库迁移的，要执行 `heroku run rails db:migrate`
