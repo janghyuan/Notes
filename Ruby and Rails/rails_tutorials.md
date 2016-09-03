@@ -1,6 +1,9 @@
 - 当前最新 Rails 版本: `gem install rails -v 5.0.0.1`
 - `rails _5.0.0.1_ new app` 用指定的 Rails 版本创建项目
 - Gemfile 里的 gem 版本号
+  - 不指定版本号时，总是安装最新的版本
+  - `gem 'uglifier', '>= 1.3.0'` 安装版本号大于或等于 1.3.0 的最新版
+  - `gem 'coffee-rails', '~> 4.0.0'` __主版本__.__次版本__.__补丁版本号__，只安装补丁版本号的更新
 - 部署到 Heroku 时，要先将测试数据库 `sqlite gem` 移动到 `:test`, `:development` 中，然后在 `:production` 中添加 `pg gem`，最后执行 `bundle install --without production`，最后将改动提交到版本控制中。
 - Rails 5.0 使用 `rails` 替换了 `rake`，例如: `rails db:migrate`
 - 如果部署到 Heroku 上的应用涉及到数据库迁移的，要执行 `heroku run rails db:migrate`
