@@ -190,3 +190,19 @@ __为什么会出现违背我们感官的结果：__
   重绘横坐标值
 - `legend(x = 5.5, y = 4.5, legend = c("Non-Smoke", "Smoke"), col = c(4, 2), pch = 15, cex = 0.8)`
   绘制图例，`pch = 15` 指定图例中的形状类型，`cex = 0.8` 指定图例相对于整个 box 的比例
+
+## 绘制 Histograms
+
+![屏幕快照 2016-09-03 下午9.51.26.png](https://ooo.0o0.ooo/2016/09/03/57cad582cf80a.png)
+
+`hist(LungCap, main = "Histograms of Lung Capacity", freq = F, ylim = c(0, 0.2), breaks = seq(from = 0, to = 16, by = 2), xlab = "Lung Capacity", las = 1)`
+
+- `freq = F` 纵坐标表示 概率密度，也可以用 `prob = T` 来设定
+- `ylim = c(0, 0.2)` 设置 y 坐标轴的刻度
+- `breaks = seq(from = 0, to = 16, by = 2)` 设定分成多少个柱状图，也可以用 `breaks = 14` 来设定
+
+`lines(density(LungCap), col = 2, lwd = 3)` 
+
+- `col = 2` 设置红色线
+- `lwd = 3` 设置线的粗细
+
