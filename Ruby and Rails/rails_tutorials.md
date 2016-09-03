@@ -1,3 +1,4 @@
+## 第一章：从零开始，完成一次部署
 - 当前最新 Rails 版本: `gem install rails -v 5.0.0.1`
 - `rails _5.0.0.1_ new app` 用指定的 Rails 版本创建项目
 - Gemfile 里的 gem 版本号
@@ -12,7 +13,17 @@
   - `git checkout master`
   - `git merge topic-branch`
   - `git branch -d topic-branch`
+- Heroku 部署步骤
+  - `heroku version` 查看是否安装 heroku toolbelts
+  - `heroku login`
+  - `heroku keys:add`
+  - `heroku create`
+  - `git push heroku master`
+  - `heroku rename new-name`
 - 部署到 Heroku 时，要先将测试数据库 `sqlite gem` 移动到 `:test`, `:development` 中，然后在 `:production` 中添加 `pg gem`，最后执行 `bundle install --without production`，最后将改动提交到版本控制中。
+
+
+
 - Rails 5.0 使用 `rails` 替换了 `rake`，例如: `rails db:migrate`
 - 如果部署到 Heroku 上的应用涉及到数据库迁移的，要执行 `heroku run rails db:migrate`
 - 启用 `minitest-reporters`: 在 `Gemfile` 中添加该 gem，然后在 `test_helper.rb` 中添加
