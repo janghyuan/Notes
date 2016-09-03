@@ -22,8 +22,11 @@
   - `heroku rename new-name`
 - 部署到 Heroku 时，要先将测试数据库 `sqlite gem` 移动到 `:test`, `:development` 中，然后在 `:production` 中添加 `pg gem`，最后执行 `bundle install --without production`，最后将改动提交到版本控制中。
 
+## 第二章：玩具应用
 
-
+- MVC 架构详解
+  ![屏幕快照 2016-09-04 上午7.37.48.png](https://ooo.0o0.ooo/2016/09/03/57cb5eee72a6a.png)
+- 生成脚手架 `rails g scaffold User name:string email:string`
 - Rails 5.0 使用 `rails` 替换了 `rake`，例如: `rails db:migrate`
 - 如果部署到 Heroku 上的应用涉及到数据库迁移的，要执行 `heroku run rails db:migrate`
 - 启用 `minitest-reporters`: 在 `Gemfile` 中添加该 gem，然后在 `test_helper.rb` 中添加
