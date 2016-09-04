@@ -30,6 +30,9 @@
 - 生成脚手架 `rails g scaffold User name:string email:string`
 - Rails 5.0 使用 `rails` 替换了 `rake`，例如: `rails db:migrate`
 - 如果部署到 Heroku 上的应用涉及到数据库迁移的，要执行 `heroku run rails db:migrate`
+
+## 第三章：基本静态的页面
+
 - 启用 `minitest-reporters`: 在 `Gemfile` 中添加该 gem，然后在 `test_helper.rb` 中添加
     
     ```ruby
