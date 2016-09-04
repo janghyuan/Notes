@@ -39,11 +39,13 @@
     require 'minitest/reporters'
     Minitest::Reporters.use!
     ```
-
+- 创建大量的静态页面使用 high_voltage gem，https://github.com/thoughtbot/high_voltage
 - 回退指南
     - `rails db:migrate` -> `rails db:rollback`
     - 回到最初始的状态：`rails db:migrate VERSION=0`
     - `rails g model User ...` ->  `rails d model User`
+
+
 
 - 测试 helper 方法
     ```ruby
