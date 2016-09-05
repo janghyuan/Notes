@@ -46,6 +46,17 @@
     - `rails g model User ...` ->  `rails d model User`
 
 
+## 第五章：完善布局
+
+| 代码 | 匹配的 HTML |
+|:---|:---|
+| `assert_select "div"` | `<div>foobar</div>` |
+| `assert_select "div", "foobar"` | `<div>foobar</div>` |
+| `assert_select "div.nav"` | `<div class="nav">foobar</div>` |
+| `assert_select "div#profile"` | `<div id="profile">foobar</div>` |
+| `assert_select "div[name=yo]"` | `<div name="yo">foobar</div>` |
+| `assert_select "a[href=?]", "/", count: 1` | `<a href="/">foo</a>` |
+| `assert_select "a[href=?]", "/", text: "foobar"` | `<a href="/">foobar</a>` |
 
 - 测试 helper 方法
     ```ruby
