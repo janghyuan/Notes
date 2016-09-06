@@ -70,6 +70,10 @@
 - 集成测试 `rails g integration_test site_layout` `rails test:integration`
 - `get '/help', to: 'pages#help', as: 'helf'` as 之后就覆盖了原来的 `help_path`
 - 如果要在测试中使用 helper 方法，就要在 `test_helper.rb` 中 `include ApplicationHelper`
+
+## 第六章：用户建模
+
+- `rails console --sandbox` 在沙盒中启动 rails console 退出后一切还原
 - 模型测试 `rails test:models`
 - 为 email 字段添加索引 `rails g migration add_index_to_users_email`
     ```ruby
