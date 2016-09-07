@@ -90,12 +90,13 @@
     
     `bcrypt` gem in your Gemfile
 
+## 第七章：注册
+
 - 关于三种环境的切换
     - `rails console test`
     - `rails server --environment production`
     - `rails db:migrate RAILS_ENV=production`
-
-- 对象 yaml 化
+- 对象 yaml 化(YAML Ain't Markup Language)
     ```ruby
     user = User.first
     puts user.attributes.to_yaml
