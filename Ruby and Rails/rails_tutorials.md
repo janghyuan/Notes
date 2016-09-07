@@ -101,7 +101,6 @@
     user = User.first
     puts user.attributes.to_yaml
     ```
-    
 - 还原数据库 `rails db:migrate:reset`
 - 只测试指定的文件 `rails test test/integration/users_login_test.rb`
 - 测试指定文件中的指定的测试 `rails test test/integration/users_login_test.rb --name test_valid_login`
