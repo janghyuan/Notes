@@ -251,3 +251,8 @@ __为什么会出现违背我们感官的结果：__
 - `lm(Height~Age)` 线性回归
 - `lty = 2` 设置线条的类型
 - `lwd = 5` 设置线条的粗细
+
+## 描述性的统计量：Mean（均值）、Standard Deviation（标准差）、Variance（方差），Frequencies（频率），Covariance（协方差）
+
+![command](http://ww1.sinaimg.cn/large/801b780ajw1f7m8rd0o8dj20c90kwwi5.jpg)
+
