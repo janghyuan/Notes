@@ -235,3 +235,19 @@ __为什么会出现违背我们感官的结果：__
 ![屏幕快照 2016-09-08 下午3.12.52.png](https://ooo.0o0.ooo/2016/09/08/57d10f98624fe.png)
 
 ![屏幕快照 2016-09-08 下午3.12.40.png](https://ooo.0o0.ooo/2016/09/08/57d10f9847891.png)
+
+
+## 绘制 Scatterplots
+
+![command](http://ww2.sinaimg.cn/large/801b780ajw1f7m7lwl57ij20kn04ugn3.jpg)
+
+![pic](http://ww2.sinaimg.cn/large/801b780ajw1f7m7lwq3o4j20gz0ccwgg.jpg)
+
+解释：
+
+- `cor(Age, Height)` pearson 相关系数
+- `cex = 0.5` 散点图中点的大小设定为默认的一半
+- `pch = 8` 散点的类型为 8
+- `lm(Height~Age)` 线性回归
+- `lty = 2` 设置线条的类型
+- `lwd = 5` 设置线条的粗细
