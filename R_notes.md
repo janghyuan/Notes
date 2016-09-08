@@ -230,8 +230,8 @@ __为什么会出现违背我们感官的结果：__
 
 ## 绘制 Stacked Barcharts, Clustered Barcharts, and Mosaic(马赛克) Plots
 
-![屏幕快照 2016-09-08 下午3.12.40.png](https://ooo.0o0.ooo/2016/09/08/57d10f9847891.png)
-
 ![屏幕快照 2016-09-08 下午3.12.17.png](https://ooo.0o0.ooo/2016/09/08/57d10f989c06d.png)
 
 ![屏幕快照 2016-09-08 下午3.12.52.png](https://ooo.0o0.ooo/2016/09/08/57d10f98624fe.png)
+
+![屏幕快照 2016-09-08 下午3.12.40.png](https://ooo.0o0.ooo/2016/09/08/57d10f9847891.png)
