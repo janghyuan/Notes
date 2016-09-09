@@ -256,3 +256,27 @@ __为什么会出现违背我们感官的结果：__
 
 ![command](http://ww1.sinaimg.cn/large/801b780ajw1f7m8rd0o8dj20c90kwwi5.jpg)
 
+
+## 修改绘图命令的一些参数
+
+- `cex` 以散点图为例，调整散点的大小
+  - `cex.main` 调整标题栏字体的大小
+  - `cex.lab` 调整横纵坐标轴字体的大小
+  - `cex.axis` 调整刻度的字体大小
+- `font.main = 2` 调整字体，2 = 粗体 3 = 斜体 4 = 粗加斜体
+- `col.main = 4` 调整颜色的命令
+- `pch = 2` plotting character 散点图中的点的形状，也可以自己设定形状 `pch = 'w'`
+- `abline( lm(Height~Age), col = 4, lty = 2, lwd = 6)` lm = line model lty = line type lwd = line width
+- 在一张图中添加 男性 和 女性的散点图
+  - `plot(Age[Gender == 'male'], Height[Gender == 'female'], col = 4, pch = "m", xlab = "Age", ylab = "Height", main = "Height vs Age")`
+  - `points(Age[Gender == "female"], Height[Gender == "female"], col = 6, pch = "f")`
+- 第二种方式是在一个 plot 中添加两张图（男性、女性）
+  - `par(mfrow = c(1, 2))` 将纸张切分为一行两列
+  - `plot(Age[Gender == 'male'], Height[Gender == 'male'], xlab = "Age", ylab = "Height", main = "Height vs Age for Males", xlim = c(0, 20), ylim = c(45, 85))`
+  - `plot(Age[Gender == 'female'], Height[Gender == 'female'], xlab = "Age", ylab = "Height", main = "Height vs Age for Females", xlim = c(0, 20), ylim = c(45, 85))`
+- 修改坐标轴
+  - `plot(Age, Height, main = "Title", axes = F)` 先去掉默认的坐标轴
+  - `axis(side = 1, at = c(7, 12.3, 15), labels = c("sev", "mean", "15"))` 修改横坐标轴
+  - `axis(side = 2, at = c(55, 65, 75), labels = c(55, 65, 75))` 修改纵坐标轴
+  - `box()` 添加一个盒子
+  - `axis(side = 4, at = c(50, 60, 70), labels = c(50, 60, 70))` 在图的右边添加坐标轴
