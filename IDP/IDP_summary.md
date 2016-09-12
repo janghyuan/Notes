@@ -51,3 +51,17 @@ Peptide bond：由一个氨基和一个羧基脱水组合而成
 
 ![Protein Backbone](https://ooo.0o0.ooo/2016/09/12/57d6273da5440.jpg)
 
+![Alpha Helix](https://ooo.0o0.ooo/2016/09/12/57d628c270e06.jpg)
+
+![Hydrogen Bonds](https://ooo.0o0.ooo/2016/09/12/57d628f23d839.jpg)
+
+![Beta Sheet](https://ooo.0o0.ooo/2016/09/12/57d6294fc4cab.jpg)
+
+![Hemoglobin](https://ooo.0o0.ooo/2016/09/12/57d62aca513b0.jpg)
+
+heme 亚铁血红素（可以和氧分子结合），上图解释为血红蛋白通常能形成一个球状来包裹一个 heme（中心是一个铁原子）
+
+蛋白质的四级结构（Quaternary）：多条多肽链形成一种复合结构（例如：4个血红蛋白再组装成一个大分子可以吸收更多的氧分子）
+
+![Protein Function](https://ooo.0o0.ooo/2016/09/12/57d62c8c57cda.jpg)
+
