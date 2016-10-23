@@ -291,14 +291,13 @@ __为什么会出现违背我们感官的结果：__
   - `box()` 添加一个盒子
   - `axis(side = 4, at = c(50, 60, 70), labels = c(50, 60, 70))` 在图的右边添加坐标轴
 
-## 为图标添加文字
+## 为图表添加文字
 
 ![](http://ww4.sinaimg.cn/large/006y8lVajw1f92cxw3meqj30dc0113yo.jpg)
 ![text](http://ww3.sinaimg.cn/large/006y8lVajw1f92cwlmsbwj30iq08hq3l.jpg)
 
 可以看到 `r = 0.82` 在途中的位置，是我们用 x，y 指定的，如果不加 adj 参数的话，它的中间位置对应的才是横坐标的 5，如果加上 `adj = 0` 那么它的最左边将与横坐标的 5 对其。
 
-### 改变 text 的字体大小，颜色与类型
 
 `text(x = 5, y = 10, cex = 0.5, col = 4, font = 4, label = "r = 0.82")`
 
@@ -309,3 +308,15 @@ __为什么会出现违背我们感官的结果：__
 
 `mtext(text = "r = 0.82", font = 4, cex = 1.25, col = 2, side = 3, adj = 1)`
 ![](http://ww2.sinaimg.cn/large/006y8lVajw1f92ddrcvr9j30iq08jt9e.jpg)
+
+## 为图标添加legend
+
+![](http://ww4.sinaimg.cn/large/006y8lVajw1f92ebi0ao3j30jt01zwfm.jpg)
+![](http://ww2.sinaimg.cn/large/006y8lVajw1f92ebxw7ydj30jd09oq45.jpg)
+
+不加边框的方式，加入参数：`bty = "n"` 
+
+![](http://ww2.sinaimg.cn/large/006y8lVajw1f92elwf4hnj30ju03zjth.jpg)
+![](http://ww4.sinaimg.cn/large/006y8lVajw1f92elwj1xgj30j4094myj.jpg)
+
+解释：`bty = 'n'` 边框无；`lty = 3` 直线的样式为点状
