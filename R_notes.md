@@ -290,3 +290,22 @@ __为什么会出现违背我们感官的结果：__
   - `axis(side = 2, at = c(55, 65, 75), labels = c(55, 65, 75))` 修改纵坐标轴
   - `box()` 添加一个盒子
   - `axis(side = 4, at = c(50, 60, 70), labels = c(50, 60, 70))` 在图的右边添加坐标轴
+
+## 为图标添加文字
+
+![](http://ww4.sinaimg.cn/large/006y8lVajw1f92cxw3meqj30dc0113yo.jpg)
+![text](http://ww3.sinaimg.cn/large/006y8lVajw1f92cwlmsbwj30iq08hq3l.jpg)
+
+可以看到 `r = 0.82` 在途中的位置，是我们用 x，y 指定的，如果不加 adj 参数的话，它的中间位置对应的才是横坐标的 5，如果加上 `adj = 0` 那么它的最左边将与横坐标的 5 对其。
+
+### 改变 text 的字体大小，颜色与类型
+
+`text(x = 5, y = 10, cex = 0.5, col = 4, font = 4, label = "r = 0.82")`
+
+`cex` 指定文字的大小（相对应于默认大小的百分比）；`col` 指定颜色，4为蓝色；`font` 指定字体的样式，4为斜体加粗。
+
+![](http://ww4.sinaimg.cn/large/006y8lVajw1f92d8olevxj30gh00wwet.jpg)
+![](http://ww2.sinaimg.cn/large/006y8lVajw1f92d8oq38kj30io08qmxy.jpg)
+
+`mtext(text = "r = 0.82", font = 4, cex = 1.25, col = 2, side = 3, adj = 1)`
+![](http://ww2.sinaimg.cn/large/006y8lVajw1f92ddrcvr9j30iq08jt9e.jpg)
