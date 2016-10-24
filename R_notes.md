@@ -326,3 +326,11 @@ __为什么会出现违背我们感官的结果：__
 
 二项分布 `X ~ BIN(n=20, p=1/6)` n = 20 次实验， p = 1/6 的概率成功
 
+
+
+
+## 安装机器学习包 "RWeka" 遇到的两个安装错误
+
+ - http://stackoverflow.com/questions/34971966/how-does-one-configure-rjava-on-osx-to-select-the-right-jvm-jinit-failing
+ - http://stackoverflow.com/questions/30738974/rjava-load-error-in-rstudio-r-after-upgrading-to-osx-yosemite/31039105
+ 
