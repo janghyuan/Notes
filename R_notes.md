@@ -320,3 +320,9 @@ __为什么会出现违背我们感官的结果：__
 ![](http://ww4.sinaimg.cn/large/006y8lVajw1f92elwj1xgj30j4094myj.jpg)
 
 解释：`bty = 'n'` 边框无；`lty = 3` 直线的样式为点状
+
+
+## Binomial Distribution in R
+
+二项分布 `X ~ BIN(n=20, p=1/6)` n = 20 次实验， p = 1/6 的概率成功
+
