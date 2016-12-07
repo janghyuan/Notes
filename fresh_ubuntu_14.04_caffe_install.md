@@ -39,3 +39,5 @@
   change `PYTHON_INCLUDE := /usr/include/python2.7 /usr/**local**/lib/python2.7/dist-packages/numpy/core/include`
 
 done...if succeed in the last step...
+
+Ref: http://www.cnblogs.com/xuanxufeng/p/6016945.html
