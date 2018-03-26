@@ -131,28 +131,28 @@ __补充内容：numeric 和 integer 的区别在哪里？__ http://stackoverflo
 
 - 柱状图统计的是类别数据的出现频次（Frequency），所以我们传递给 `barplot()` 的参数就是一个 Frequency Table，而如何产生这个 table，就需要 `table()` 命令，`table` 产出的表格：
 
-  ```
-  table(Smoke, Gender)
-  ####################
-       Gender
+```
+table(Smoke, Gender)
+####################
+     Gender
 Smoke female male
-  no     314  334
-  yes     44   33
-  ####################
-  ```
+no     314  334
+yes     44   33
+####################
+```
+
+之后的 `barplot` 的横坐标轴就是 `Gender`
+
+```
+barplot(percent, main="TITLE", xlab="Gender", ylab="%", las=1, names.arg=c("Female", "Male"))
+```
   
-  之后的 `barplot` 的横坐标轴就是 `Gender`
-  
-  ```
-  barplot(percent, main="TITLE", xlab="Gender", ylab="%", las=1, names.arg=c("Female", "Male"))
-  ```
-  
-  解释:
-  - `main` 标题
-  - `xlab` `ylab` x,y 轴的名称
-  - `las` 将 y 轴的刻度表示水平显示
-  - `names.arg` 将每一个柱状图的的标识改成指定的
-  - `horiz=T` 将主转图水平显示，并且要更改 x,y轴的顺序
+解释:
+- `main` 标题
+- `xlab` `ylab` x,y 轴的名称
+- `las` 将 y 轴的刻度表示水平显示
+- `names.arg` 将每一个柱状图的的标识改成指定的
+- `horiz=T` 将主转图水平显示，并且要更改 x,y轴的顺序
 
 - 饼状图 `pie(percentage)`
 
