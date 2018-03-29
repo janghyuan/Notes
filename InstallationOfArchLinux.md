@@ -86,6 +86,33 @@ mount /dev/sda2 /mnt/home
 
 `poweroff`
 
+## after reboot
+
+You don't have network. you have to enable network by your own.
+
+`systemctl start NetworkManager`
+
+`systemctl enable NetworkManager` this command will start Network when booted
+
+`useradd -m janghuan` add a new user with `-m` home directory
+
+`userdel -r username` delete the user and home directory
+
+
+## User Interface
+
+`pacman -S xorg-server`
+
+`lspci` check your video card
+
+- Intel: `pacman -S xf86-video-intel libgl mesa`
+- Nvidia: `pacman -S nvidia nvidia-lts nvidia-libgl mesa`
+- VBOX: `pacman -S virtualbox-guest-utils virtualbox-guest-modules-arch mesa` and `systemctl enable vboxservice.service` and start
+
+`pacman -S lightdm lightdm-gtk-greeter` and `systemctl enable lightdm`
+
+`pacman -S mate mate-extra`
+
 
 
 
