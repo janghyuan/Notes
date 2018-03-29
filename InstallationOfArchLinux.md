@@ -42,3 +42,50 @@ mount /dev/sda2 /mnt/home
 
 `genfstab -U -p /mnt >> /mnt/etc/fstab`
 
+## software install 
+
+`arch-chroot /mnt`
+
+`pacman -S openssh grub-bios linux-headers linux-lts linux-lts-headers`
+
+`pacman -S dialog network-manager-applet networkmanager networkmanager-openvpn wireless_tools wpa_supplicant wpa_actiond`
+
+`mkinitcpio -p linux`
+
+`mkinitcpio -p linux-lts`
+
+## locale and grub
+
+`nano /etc/locale.gen` uncomment en_US.UTF-8 UTF-8
+
+`locale-gen`
+
+`passwd` set root password
+
+`grub-install --target=i386-pc --recheck /dev/sda`
+
+`cp /usr/share/locale/en\@quot/LC_MESSAGES/grub.mo /boot/grub/locale/en.mo`
+
+`grub-mkconfig -o /boot/grub/grub.cfg`
+
+## swapfile
+
+`fallocate -l 2G /swapfile`
+
+`chmod 600 /swapfile`
+
+`mkswap /swapfile`
+
+`echo '/swapfile none swap sw 0 0' | tree -a /etc/fstab`
+
+## wrap up
+
+`exit`
+
+`umount -a`
+
+`poweroff`
+
+
+
+
