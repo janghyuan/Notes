@@ -127,3 +127,31 @@ HERE
 
 - and or not 的优先级是小于 && || !
 - 同时，and or not 的优先级小于 =
+
+## attr_accesser 的原理
+
+```
+class User
+  def self.setup_accessor var
+    define_method var do
+      instance_variable_get "@#{var}"
+    end
+    
+    define_method "#{var}=" do |value|
+      instance_variable_set "@#{var}", value
+    end
+  end
+  
+  setup_accessor :name, :age
+  
+  def initialize name, age
+    @name = name
+    @age = age
+  end
+end
+```
+
+## 模块方法 include 和 extend 的区别
+
+- include 将模块方法转变为实例方法
+- extend  将模块方法转变为类方法
